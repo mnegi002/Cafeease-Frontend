@@ -1,1 +1,1 @@
-export const baseUrl = `https://cafeease-backend.vercel.app/`
+export const baseUrl = `https://cafeease-backend.vercel.app`
