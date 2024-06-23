@@ -1,0 +1,28 @@
+
+
+.question {
+    width: 100%; /* Set width to 100% for responsiveness */
+    max-width: 78%; /* Set maximum width to maintain some space on larger screens */
+    margin-left: auto; /* Center the element horizontally */
+    margin-right: auto; /* Center the element horizontally */
+    height: auto; /* Set height to auto for responsiveness */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question > h1 {
+    text-align: center;
+    color: white;
+}
+
+@media (min-width : 320px ) and (max-width : 430px) {
+    .question h1{
+        font-size: 19px;
+        width: 100%;
+    }
+    
+
+
+    
+}

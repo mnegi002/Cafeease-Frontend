@@ -1,0 +1,183 @@
+.divmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border:2px solid red; */
+    margin-top:10px;
+    height: auto;
+    width: 100%;
+    
+}
+
+.container{
+    width: 80%;
+    /* height: 5%; */
+    background-color: beige;
+    border: 2px none;
+    margin: 3px;
+    padding: 2px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border:2px solid blue; */
+    border-radius: 4px;
+
+}
+
+.box{
+    /* height: 200px; */
+    width: 200px;
+    /* border: 2px green; */
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    
+  
+}
+
+#box1{
+    width: 600px;   
+    height: 140px;
+    padding: 2px;
+    /* border:2px solid orange;
+    background-color: none; */
+    /* align-items: flex-start; */
+
+}
+
+.box h3{
+    margin-bottom: 2%;
+}
+
+.box h4{
+    
+    /* margin-left: 10%; */
+    margin-bottom: 2%;   
+}
+
+.box p{
+    /* margin-top: -2%; */
+    margin-bottom:5%;
+    /* border:2px solid pink; */
+
+}
+
+#box2{
+    background-color: none;
+    display: flex;
+    height: 140px;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    /* border:2px solid black; */
+}
+.box img{
+    height: 70%;
+    margin-top: 5px;
+    width: 100px;
+    border-radius: 10px;
+    object-fit: cover !important;
+    /* border:2px solid red; */
+
+}
+
+.box button{
+    width: 51%;
+    height: 15%;
+
+    border-radius: 12px;
+    border: none;
+    padding-bottom: 25px;
+    
+}
+
+.button {
+    /* border:2px solid yellow; */
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-left: -1px;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  margin-top: 10px;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+
+ /* margin-bottom: 6px;  */
+}
+
+.button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.line {
+    height: 2px;
+    width: 72%;
+    background-color: #d3d3d3;
+    margin: 3px 0;
+  }
+
+
+
+
+/* Styles for tablet and mobile screens */
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 100%; /* Adjust width for full width on smaller screens */
+    }
+    #box2{
+        width: 40%;
+    }
+
+    #box1 {
+        width: 60%;/* Adjust width for full width on smaller screens */
+        padding:0px;
+    }
+    .box p{
+        font-size:12.5px ;
+
+    }
+    .box h3{
+        font-size: 15px;
+        margin-bottom: 0%;
+    }
+    .box h4{
+        margin-bottom: 0%;
+    }
+    .box p{
+        margin-bottom: 1%;
+    }
+    .box{
+        width:70%;
+    }
+    .divmain{
+        width: 90%;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+    }
+
+}
+

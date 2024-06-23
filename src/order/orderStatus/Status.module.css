@@ -1,0 +1,39 @@
+.failed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:90vh;
+    /* overflow:hidden; */
+}
+
+.failed>h2{
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.failed>p{
+    font-style: italic;
+
+}
+
+.success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:90vh;
+    /* overflow:hidden; */
+}
+
+.success>h2{
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.success>p{
+    font-style: italic;
+
+}

@@ -1,0 +1,89 @@
+.dishcarddiv {
+    border: 4px solid #ff511c;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    height: 220px;
+    width: 15%;
+    padding-bottom: 20px;
+    margin-top: 60px;
+    margin-left:60px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.dishcarddiv:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+}
+
+.dishcarddiv:first-child {
+    margin-left: 200px;
+}
+
+.picdiv {
+    /* border:4px solid blue; */
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    height: 50px;
+
+}
+
+.picdiv>img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 50px;
+    margin-top: -30px;
+    object-fit:cover;
+}
+
+
+.titlediv {
+    /* border:2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    /* margin-top:30px; */
+}
+
+.titlediv>h2 {
+    margin-left: 20px;
+    /* border:2px solid red; */
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.titlediv>h3 {
+    margin-left: 20px;
+    margin-right: 10px;
+    /* border:2px solid red; */
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.buttondiv {
+    /* border:2px solid red; */
+    height: 30px;
+}
+
+.buttondiv button {
+    background-color: #ff511c;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:90%;
+    height: 40px;
+    cursor: pointer;
+    padding-top: 5px;
+    font-size: larger;
+}
+
+.buttondiv {
+    /* margin-top: -25px; */
+}

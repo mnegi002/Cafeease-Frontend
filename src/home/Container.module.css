@@ -1,0 +1,88 @@
+.maincontainer {
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #bdad80;
+    min-height: 94vh;
+    padding: 20px;
+}
+
+.content {
+    padding: 20px;
+    margin-inline-start: 30px;
+    text-align: center;
+}
+
+.sp {
+    color: #ff511c;
+}
+
+.h1head {
+    font-size: 2.5rem; /* Adjust font size for mobile */
+}
+
+.h4head {
+    font-size: 1.2rem; /* Adjust font size for mobile */
+    margin-top: 20px;
+    font-family: monospace;
+}
+
+.menulink {
+    margin-top: 20px;
+    background-color: #ff511c;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    font-size: 1rem; /* Adjust font size for mobile */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.image {
+    max-width: 100%; /* Make image responsive */
+    margin-top: 20px; /* Add margin for spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    border-radius: 50%;
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media query for tablets */
+@media only screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto; /* Reset height */
+    }
+
+    .content {
+        width: 50%; /* Take up half of the container's width */
+        padding: 40px;
+        text-align: left; /* Align text to the left */
+    }
+
+    .image {
+        width: 50%; /* Take up half of the container's width */
+        margin-top: 0; /* Remove margin */
+    }
+}

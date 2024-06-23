@@ -1,0 +1,29 @@
+.contact {
+    display: flex;
+    /* flex-direction: column; */
+    padding-left: 180px;
+    padding-top: 50px;
+}
+
+.maincontact {
+    background-color: #323232;
+    color: #AE9A64;
+}
+
+/* Media query for tablets and mobile devices */
+@media screen and (max-width: 768px) {
+    .contact {
+        padding-left: 20px;
+        flex-direction: column; /* Adjust left padding for tablets and mobile devices */
+    }
+
+    
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+    .contact {
+        padding-left: 10px; /* Adjust left padding for mobile devices */
+        padding-top: 20px; /* Adjust top padding for mobile devices */
+    }
+}

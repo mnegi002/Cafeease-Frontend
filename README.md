@@ -1,1 +1,2 @@
-# Cafeease-Frontend
+# CafeEase
+Final-year project
