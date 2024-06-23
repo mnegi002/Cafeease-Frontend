@@ -17,9 +17,7 @@ const Navbar = () => {
         sethambutton(prev => !prev)
         closeham(prev => !prev)
     }
-    const hambuttonhandler = () =>{
 
-    }
     // const[isLoggedIn , setIsLoggedIn ] = useState(false)
     const showHandler = () => {
         setCartShow(true)
