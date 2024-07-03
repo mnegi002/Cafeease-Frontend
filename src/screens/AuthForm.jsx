@@ -14,7 +14,7 @@ export default function AuthForm() {
   });
   const [errors, setErrors] = useState({});
   const [isSignUpActive, setIsSignUpActive] = useState(false);
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,49 +23,47 @@ export default function AuthForm() {
       ? `${baseUrl}/api/createuser`
       : `${baseUrl}/api/loginuser`;
 
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: credentials.name,
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      });
 
-    const json = await response.json();
-    console.log(json);
+      const json = await response.json();
+      console.log(json);
 
-    if (!json.success) {
-      if (isSignUpActive) {
-        // Handle sign-up errors
-        setErrors(
-          json.errors.reduce((acc, error) => {
-            acc[error.path] = error.msg;
-            return acc;
-          }, {})
-        );
-      } else {
-        // Handle login errors
-        alert("Incorrect email or password. Please try again.");
+      if (!json.success) {
+        if (isSignUpActive) {
+          setErrors(
+            json.errors.reduce((acc, error) => {
+              acc[error.path] = error.msg;
+              return acc;
+            }, {})
+          );
+        } else {
+          alert("Incorrect email or password. Please try again.");
+        }
       }
 
-      //   alert("Enter valid credentials");
-    }
-
-    if (json.success) {
-      if (isSignUpActive) {
-        alert("User created successfully!");
-        // setCredentials({ email: "", password: "", name: "" }); // Reset fields
-
-        handleToggleClick(); // Toggle to Sign In view
-      } else {
-        localStorage.setItem("authToken", json.authToken);
-        localStorage.setItem("userEmail", credentials.email);
-        Navigate("/");
+      if (json.success) {
+        if (isSignUpActive) {
+          alert("User created successfully!");
+          handleToggleClick();
+        } else {
+          localStorage.setItem("authToken", json.authToken);
+          localStorage.setItem("userEmail", credentials.email);
+          navigate("/");
+        }
       }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
@@ -76,8 +74,6 @@ export default function AuthForm() {
 
   const handleToggleClick = () => {
     setIsSignUpActive((prev) => !prev);
-
-    // Reset fields when toggling to Sign In view
     setCredentials({ email: "", password: "", name: "" });
   };
 
@@ -88,14 +84,12 @@ export default function AuthForm() {
   return (
     <div className="loginbody">
       <div className={`container ${isSignUpActive ? "active" : ""}`}>
-        <div
-          className={`form-container ${isSignUpActive ? "sign-up" : "sign-in"}`}
-        >
+        <div className={`form-container ${isSignUpActive ? "sign-up" : "sign-in"}`}>
           <form onSubmit={handleSubmit}>
             <h1>{isSignUpActive ? "Create Account" : "Sign In"}</h1>
             <div className="social-icons">
               <NavLink to="#" className="icon">
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </NavLink>
               <NavLink to="#" className="icon">
                 <i className="fa-brands fa-facebook-f"></i>
@@ -139,26 +133,24 @@ export default function AuthForm() {
                 onChange={changeHandler}
                 required
               />
-
-              {showPassword && (
+              {showPassword ? (
                 <span className="passwordspan" onClick={passwordHandler}>
-                  <VisibilityOffIcon />{" "}
+                  <VisibilityOffIcon />
                 </span>
-              )}
-              {!showPassword && (
+              ) : (
                 <span className="passwordspan" onClick={passwordHandler}>
-                  <VisibilityIcon />{" "}
+                  <VisibilityIcon />
                 </span>
               )}
             </div>
             {errors.password && <p className="error">*{errors.password}</p>}
-
-            {isSignUpActive && <button className="signup">Sign Up</button>}
-            {!isSignUpActive && (
-              <React.Fragment>
+            {isSignUpActive ? (
+              <button className="signup">Sign Up</button>
+            ) : (
+              <>
                 <NavLink to="#">Forget Your Password?</NavLink>
                 <button className="log">Log In</button>
-              </React.Fragment>
+              </>
             )}
           </form>
         </div>
@@ -168,21 +160,15 @@ export default function AuthForm() {
               <h1>Welcome Back!</h1>
               <p>Existing User !! Log In here</p>
               <button className="hidden" id="login" onClick={handleToggleClick}>
-                LOGIn
+                LOG In
               </button>
             </div>
             <div className="toggle-panel toggle-right">
               <h1>Welcome, Friend!</h1>
               <p>New User !! SignUp here.</p>
-              {/* <NavLink to='/createuser'> */}
-              <button
-                className="hidden"
-                id="register"
-                onClick={handleToggleClick}
-              >
+              <button className="hidden" id="register" onClick={handleToggleClick}>
                 Sign Up
               </button>
-              {/* </NavLink> */}
             </div>
           </div>
         </div>
